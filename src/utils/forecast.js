@@ -9,7 +9,7 @@ const forecast = (lat,lon,callback) => {
 		}else if(response.body.cod =="400"){
 			callback('Unable to find location.Try another search!', undefined)
 		}else{
-			callback(undefined,'It is currntly '+(response.body.current.temp - 273.15).toFixed(2)+' degrees outside.The wind speed now is '+response.body.current.wind_speed);
+			callback(undefined,'It is currntly '+(response.body.current.temp - 273.15).toFixed(2)+' degrees outside.The wind speed is '+response.body.current.wind_speed + ' and humidity is ' + response.body.current.humidity + '%');
 		}
 	});
 }
